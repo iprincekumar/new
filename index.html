@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff8db3">
+    <title>Happy Birthday</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Background music (optional) -->
+    <audio id="bg-music" src="./assets/audio/music.mp3" preload="auto" loop></audio>
+
+    <header class="hero" role="banner">
+        <div class="hero__decor" aria-hidden="true"></div>
+        <div class="hero__balloons" aria-hidden="true">
+            <span class="balloon balloon--p1"></span>
+            <span class="balloon balloon--p2"></span>
+            <span class="balloon balloon--b1"></span>
+            <span class="balloon balloon--b2"></span>
+            <span class="balloon balloon--y1"></span>
+        </div>
+        <div class="container hero__content">
+            <h1 class="hero__title gradient-text">Happy Birthday, <span id="celebrant-name">Beautiful</span> ✨</h1>
+            <p class="hero__subtitle">Wishing you a <span class="rotating-word" aria-live="polite">lovely</span>, bright, and magical day.</p>
+            <div class="hero__actions">
+                <button id="celebrate-btn" class="btn btn--primary">Celebrate Now</button>
+                <a href="#gallery" class="btn btn--ghost">View Gallery</a>
+                <button id="music-toggle" class="btn btn--icon" aria-pressed="false" aria-label="Toggle music" title="Play music">
+                    <span class="icon">♪</span>
+                    <span class="btn__label">Music</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false" role="img">
+            <path d="M0,64 C240,96 480,0 720,16 C960,32 1200,112 1440,80 L1440,120 L0,120 Z"></path>
+        </svg>
+    </div>
+
+    <main id="main" class="main" role="main">
+        <section class="section section--message">
+            <div class="container">
+                <h2 class="section__title">A Little Note</h2>
+                <div class="glass-card">
+                <p class="section__lead">
+                    🎉 Happy Birthday, my love! 🎂 May your day be filled with joy, laughter, and all the happiness in the world. You deserve the best of everything because you are the best thing that has ever happened to me. ❤️<br>
+
+🌹 To the most amazing woman in my life, Happy Birthday! 🎈 Thank you for bringing so much love and light into my world. I am grateful every day for your presence in my life. Here’s to many more years of love and happiness together. 🥂<br>
+
+💖 Happy Birthday to my better half! 🎊 Your smile brightens up my world, and your love fills my heart with joy. May your special day be as radiant and wonderful as you are. I love you more than words can express. 😘<br>
+
+🌟 On your birthday, I want to remind you of how special you are to me. 🎁 Your kindness, grace, and beauty never cease to amaze me. May your day be as fabulous as you are and may all your dreams come true. Cheers to another year of love and laughter! 🌺<br>
+
+🎉 Cheers to another year of adventures, laughter, and love with you, my darling. 🎂 May your birthday be as magical and unforgettable as you are to me. You are my rock, my love, my everything. Happy Birthday, my Queen! 👑<br>
+                </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--cards">
+            <div class="container">
+                <h2 class="section__title">You Are Extraordinary</h2>
+                <div class="cards">
+                    <article class="card reveal">
+                        <div class="card__emoji">🌸</div>
+                        <h3 class="card__title">Grace</h3>
+                        <p class="card__text">Your kindness and warmth make every room bloom.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card__emoji">✨</div>
+                        <h3 class="card__title">Magic</h3>
+                        <p class="card__text">You turn little moments into glittering memories.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card__emoji">💖</div>
+                        <h3 class="card__title">Love</h3>
+                        <p class="card__text">You are treasured more than words can say.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section--gallery" aria-label="Photo gallery">
+            <div class="container">
+                <h2 class="section__title">Beautiful Moments</h2>
+                <div id="gallery-grid" class="gallery" data-empty-hint="Add images into assets/images to see them here."></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+        <button class="lightbox__close" id="lightbox-close" aria-label="Close viewer">×</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+        <img class="lightbox__image" id="lightbox-image" alt="Selected photo" />
+        <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next image">›</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <span>Made with love by Prince 💖</span>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
+
